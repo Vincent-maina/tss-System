@@ -1,0 +1,26 @@
+{
+  "name": "tsss-unified",
+  "version": "1.0.0",
+  "description": "Teacher School Swapping System - Unified Development Environment",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"bgBlue,bgGreen\" \"npm run dev --prefix Backend\" \"npm run dev --prefix tsss-frontend-main\"",
+    "start": "concurrently -n \"BACKEND,FRONTEND\" -c \"bgBlue,bgGreen\" \"npm start --prefix Backend\" \"npm start --prefix tsss-frontend-main\"",
+    "install:all": "npm install && npm install --prefix Backend && npm install --prefix tsss-frontend-main",
+    "backend:dev": "npm run dev --prefix Backend",
+    "frontend:dev": "npm run dev --prefix tsss-frontend-main",
+    "lint": "npm run lint --prefix Backend && npm run lint --prefix tsss-frontend-main"
+  },
+  "keywords": [
+    "teacher",
+    "swap",
+    "matching",
+    "tsc",
+    "kenya"
+  ],
+  "author": "Antigravity",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

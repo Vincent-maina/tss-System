@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 60 20% 98%;
+    --foreground: 210 20% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 12%;
+
+    --primary: 152 55% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 42 80% 55%;
+    --secondary-foreground: 210 20% 12%;
+
+    --muted: 150 10% 94%;
+    --muted-foreground: 210 10% 46%;
+
+    --accent: 152 30% 92%;
+    --accent-foreground: 152 55% 22%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 12% 88%;
+    --input: 150 12% 88%;
+    --ring: 152 55% 28%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 152 30% 97%;
+    --sidebar-foreground: 210 20% 12%;
+    --sidebar-primary: 152 55% 28%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 152 20% 93%;
+    --sidebar-accent-foreground: 152 55% 22%;
+    --sidebar-border: 150 12% 88%;
+    --sidebar-ring: 152 55% 28%;
+
+    --success: 152 60% 40%;
+    --warning: 42 90% 55%;
+    --info: 210 70% 55%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(152, 55%, 28%) 0%, hsl(152, 45%, 20%) 50%, hsl(210, 30%, 15%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42, 80%, 55%) 0%, hsl(38, 85%, 48%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(150, 15%, 97%) 100%);
+
+    --shadow-card: 0 1px 3px hsl(152 20% 20% / 0.06), 0 4px 12px hsl(152 20% 20% / 0.04);
+    --shadow-elevated: 0 4px 16px hsl(152 20% 20% / 0.08), 0 12px 40px hsl(152 20% 20% / 0.06);
+
+    --font-heading: 'DM Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  .dark {
+    --background: 210 20% 7%;
+    --foreground: 60 10% 95%;
+    --card: 210 18% 10%;
+    --card-foreground: 60 10% 95%;
+    --popover: 210 18% 10%;
+    --popover-foreground: 60 10% 95%;
+    --primary: 152 50% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 42 70% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 15% 15%;
+    --muted-foreground: 210 10% 60%;
+    --accent: 152 20% 18%;
+    --accent-foreground: 152 50% 70%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 15% 18%;
+    --input: 210 15% 18%;
+    --ring: 152 50% 45%;
+    --sidebar-background: 210 18% 8%;
+    --sidebar-foreground: 60 10% 95%;
+    --sidebar-primary: 152 50% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 152 15% 15%;
+    --sidebar-accent-foreground: 152 50% 70%;
+    --sidebar-border: 210 15% 18%;
+    --sidebar-ring: 152 50% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+  .font-body {
+    font-family: var(--font-body);
+  }
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .gradient-gold {
+    background: var(--gradient-gold);
+  }
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+}
+
+@layer components {
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elevated);
+  }
+}
+
+@keyframes slideshow {
+  0%, 20% { opacity: 1; transform: scale(1); }
+  25%, 95% { opacity: 0; transform: scale(1.08); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-slideshow {
+  animation: slideshow 20s infinite;
+}
+
+@keyframes kenburns {
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.12) translate(-2%, -1%); }
+  100% { transform: scale(1) translate(0, 0); }
+}
+
+.animate-kenburns {
+  animation: kenburns 25s ease-in-out infinite;
+}
