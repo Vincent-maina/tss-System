@@ -1,0 +1,40 @@
+{
+  "name": "tsss-backend",
+  "version": "1.0.0",
+  "description": "Teacher School Swapping System - Backend API",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest --coverage",
+    "lint": "eslint src/**/*.js"
+  },
+  "keywords": ["teacher", "swap", "matching", "tsc", "kenya"],
+  "author": "Vincent Kangethe Maina",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3",
+    "dotenv": "^16.3.1",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "express-validator": "^7.0.1",
+    "express-rate-limit": "^7.1.5",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "winston": "^3.11.0",
+    "nodemailer": "^6.9.7",
+    "multer": "^1.4.5-lts.1",
+    "node-cron": "^3.0.3",
+    "socket.io": "^4.6.0",
+    "pdfkit": "^0.13.0",
+    "joi": "^17.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3",
+    "eslint": "^8.56.0"
+  }
+}
